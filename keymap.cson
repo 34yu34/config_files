@@ -1,0 +1,9 @@
+"atom-workspace":
+  "ctrl-tab": "pane:show-next-item"
+  "ctrl-tab ^ctrl": "unset!"
+  "ctrl-shift-tab": "pane:show-previous-item"
+  "ctrl-shift-tab ^ctrl": "unset!"
+  "alt-shift-b" : "atom-beautify:beautify-editor"
+  "alt-left" : "pane:split-left-and-copy-active-item"
+  "alt-right" : "pane:split-right-and-copy-active-item"
+  "shift-enter" : "first-item:copy"
