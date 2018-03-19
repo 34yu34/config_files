@@ -115,5 +115,7 @@ alias file="nautilus . &"
 alias matlab="sudo /usr/local/MATLAB/R2017a/bin/matlab &"
 alias electric="java -jar ~/ecole/inf1600/electric/electric.jar &"
 alias umlet="java -jar ~/umlet/umlet.jar &"
+alias copyTitle="cp ~/ecole/test/latex/titlepage.sty . & mkdir image & cp ~/ecole/test/latex/image/university.png ./image"
+alias doc="nautilus ~/repositories/doc &"
 
 alias dbload="rails db:drop &&rails db:schema:load &&rails db:seed"
