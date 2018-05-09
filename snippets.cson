@@ -21,13 +21,17 @@
   'class def':
     'prefix': 'class'
     'body': 'class ${1}\n\tdef initialize\n\t${2}\n\tend\n\t\nend'
+
+  'comment':
+    'prefix': 'comment'
+    'body': '######################################################################\n#\t${1:comment}\n######################################################################'
 ######################################################################
 #  Python
 ######################################################################
 '.source.python':
   'comment':
     'prefix': 'comment'
-    'body': '######################################################################\n# ${1:Comment}\n######################################################################'
+    'body': '######################################################################\n#\t${1:Comment}\n######################################################################'
 
   'map':
     'prefix': 'map'
@@ -46,7 +50,7 @@
 
   'include all and main':
     'prefix': 'start'
-    'body': '#include<iostream>\n#include<string>\n#include<math.h>\n#include<stdint.h>\n#include<algorithm> //sort, copy_if et autre\n#include<iterator> //ostream_iterator, istream_iterator, back_inserter()\n#include<functional> // bind et la librairie standard foncteur
+    'body': '#include<iostream>\n#include<string>\n#include<math.h>\n#include<stdint.h>\n#include<stdlib.h>//rand() fct\n#include<algorithm> //sort, copy_if et autre\n#include<iterator> //ostream_iterator, istream_iterator, back_inserter()\n#include<functional> // bind et la librairie standard foncteur
       \n\nusing namespace std;\nusing namespace std::placeholders; // permet d\'utiliser _1 lors des bind
       \n\n int main()\n{\n\t${1}\n\treturn 0;\n}'
 
