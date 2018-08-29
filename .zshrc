@@ -89,7 +89,7 @@ function note {
 }
 compdef _note note
 function _note {
-compadd log2410 log2420 log2810 inf2010
+compadd inf2610 log3430 phs4700 log2990
 }
 
 function ecole {
@@ -97,7 +97,7 @@ function ecole {
 }
 compdef _ecole ecole
 function _ecole {
-  compadd log2410 log2420 log2810 inf2010
+  compadd inf2610 log3430 phs4700 log2990
 }
 
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -106,7 +106,8 @@ alias gap="git add -N . && git add -p"
 alias zshconfig="atom ~/.zshrc"
 alias pathconfig="atom ~/.profile"
 alias chrome="google-chrome"
-alias rub= "ruby main.rb"
+alias rub="ruby main.rb"
+alias horaire="nautilus ~/ecole/horaire &"
 
 alias mil="cd ~/Documents/militaire"
 alias repo="cd ~/repositories"
@@ -114,7 +115,7 @@ alias atompack="cd ~/.atom/packages"
 alias doc="nautilus ~/repositories/doc &"
 
 alias file="nautilus . &"
-alias matlab="sudo /usr/local/MATLAB/R2017a/bin/matlab &"
+alias math="sudo /usr/local/MATLAB/R2017a/bin/matlab"
 alias electric="java -jar ~/ecole/inf1600/electric/electric.jar &"
 alias umlet="java -jar ~/umlet/umlet.jar &"
 alias copyTitle="cp ~/ecole/test/latex/titlepage.sty . & mkdir image & cp ~/ecole/test/latex/image/university.png ./image"
