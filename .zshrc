@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,24 +102,30 @@ function _ecole {
 
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gap="git add -N . && git add -p"
+alias gk="gitk --all"
+alias gc="git commit -m"
 
 alias zshconfig="atom ~/.zshrc"
 alias pathconfig="atom ~/.profile"
-alias chrome="google-chrome"
-alias rub="ruby main.rb"
-alias horaire="nautilus ~/ecole/horaire &"
-
 alias mil="cd ~/Documents/militaire"
 alias repo="cd ~/repositories"
 alias atompack="cd ~/.atom/packages"
+alias projet="cd ~/ecole/log2990/projet"
+
+alias horaire="nautilus ~/ecole/horaire &"
+alias file="nautilus . &"
 alias doc="nautilus ~/repositories/doc &"
 
-alias file="nautilus . &"
-alias math="sudo /usr/local/MATLAB/R2017a/bin/matlab"
+alias copyTitle="cp ~/ecole/test/latex/titlepage.sty . & mkdir image & cp ~/ecole/test/latex/image/university.png ./image"
+alias math="cd /usr/local/MATLAB/R2017a/bin && ./matlab"
 alias electric="java -jar ~/ecole/inf1600/electric/electric.jar &"
 alias umlet="java -jar ~/umlet/umlet.jar &"
-alias copyTitle="cp ~/ecole/test/latex/titlepage.sty . & mkdir image & cp ~/ecole/test/latex/image/university.png ./image"
+
+alias chrome="google-chrome"
 alias rubydoc="google-chrome ~/repositories/doc/rubyDoc/*.html"
 alias gosudoc="google-chrome ~/repositories/doc/GosuDoc/*.html"
 
 alias dbload="rails db:drop &&rails db:schema:load &&rails db:seed"
+alias rub="ruby main.rb"
+alias pass="~/passwordgen/passwordhasher"
+alias rubyc="~/repositories/rubyc/rubyc"
