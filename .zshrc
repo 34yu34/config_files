@@ -89,7 +89,7 @@ function note {
 }
 compdef _note note
 function _note {
-compadd inf2610 log3430 phs4700 log2990
+  _path_files -/ -W"/home/billy/ecole"
 }
 
 function ecole {
@@ -97,7 +97,10 @@ function ecole {
 }
 compdef _ecole ecole
 function _ecole {
-  compadd inf2610 log3430 phs4700 log2990
+  # compadd inf2610 log3430 phs4700 log2990
+  _path_files -/ -W"/home/billy/ecole"
+  # compadd inf2610 log3430 phs4700 log2990
+  # _alternative 'files:filenames:{_path_files -/ -w "~/ecole"}'
 }
 
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
