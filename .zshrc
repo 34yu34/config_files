@@ -97,10 +97,15 @@ function ecole {
 }
 compdef _ecole ecole
 function _ecole {
-  # compadd inf2610 log3430 phs4700 log2990
   _path_files -/ -W"/home/billy/ecole"
-  # compadd inf2610 log3430 phs4700 log2990
-  # _alternative 'files:filenames:{_path_files -/ -w "~/ecole"}'
+}
+
+function repo {
+  cd ~/repositories/$1
+}
+compdef _repo repo
+function _repo {
+  _path_files -/ -W"/home/billy/repositories"
 }
 
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -111,7 +116,7 @@ alias gc="git commit -m"
 alias zshconfig="atom ~/.zshrc"
 alias pathconfig="atom ~/.profile"
 alias mil="cd ~/Documents/militaire"
-alias repo="cd ~/repositories"
+#alias repo="cd ~/repositories"
 alias atompack="cd ~/.atom/packages"
 alias projet="cd ~/ecole/log2990/projet"
 
