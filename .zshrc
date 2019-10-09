@@ -128,6 +128,8 @@ alias copyTitle="cp ~/ecole/test/latex/titlepage.sty . & mkdir image & cp ~/ecol
 alias math="cd /usr/local/MATLAB/R2017a/bin && ./matlab"
 alias electric="java -jar ~/ecole/inf1600/electric/electric.jar &"
 alias umlet="java -jar ~/umlet/umlet.jar &"
+alias untar="tar -zxvf"
+alias eclipse="/home/billy/eclipse/java-2018-092/eclipse/eclipse"
 
 alias chrome="google-chrome"
 alias rubydoc="google-chrome ~/repositories/doc/rubyDoc/*.html"
