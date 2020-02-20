@@ -108,6 +108,32 @@ function _repo {
   _path_files -/ -W"/home/billy/repositories"
 }
 
+function py {
+  if [ "$#" -eq 1 ]; then
+    python3 $@
+  else
+    python3 main.py
+  fi
+}
+
+compdef _py py
+function _py {
+  _path_files -g"**/*.py"
+}
+
+function rub {
+  if [ "$#" -eq 1 ]; then
+    ruby $@
+  else
+    ruby main.rb
+  fi
+}
+
+compdef _rub rub
+function _rub {
+  _path_files -g"**/*.rb"
+}
+
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gap="git add -N . && git add -p"
 alias gk="gitk --all"
@@ -136,6 +162,5 @@ alias rubydoc="google-chrome ~/repositories/doc/rubyDoc/*.html"
 alias gosudoc="google-chrome ~/repositories/doc/GosuDoc/*.html"
 
 alias dbload="rails db:drop &&rails db:schema:load &&rails db:seed"
-alias rub="ruby main.rb"
 alias pass="~/passwordgen/passwordhasher"
 alias rubyc="~/repositories/rubyc/rubyc"
