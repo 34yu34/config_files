@@ -108,20 +108,28 @@ function _repo {
   _path_files -/ -W"/home/billy/repositories"
 }
 
+function playground {
+  cd ~/playground/$1
+}
+compdef _playground playground
+function _repo {
+  _path_files -/ -W"/home/billy/playground"
+}
+
 function py {
   if [ "$#" -eq 1 ]; then
-    python3 $@
+    python3.7 $@
   else
-    python3 main.py
+    python3.7 main.py
   fi
 }
 
 compdef _py py
 function _py {
-  _path_files -g"**/*.py"
+  _path_files -g "**/*.py" -F "**/__init__.py"
 }
 
-function rub {
+function rb {
   if [ "$#" -eq 1 ]; then
     ruby $@
   else
@@ -129,8 +137,8 @@ function rub {
   fi
 }
 
-compdef _rub rub
-function _rub {
+compdef _rb rb
+function _rb {
   _path_files -g"**/*.rb"
 }
 
@@ -144,7 +152,7 @@ alias pathconfig="atom ~/.profile"
 alias mil="cd ~/Documents/militaire"
 #alias repo="cd ~/repositories"
 alias atompack="cd ~/.atom/packages"
-alias projet="cd ~/ecole/log2990/projet"
+alias projet="cd ~/ecole/log3900/projet"
 
 alias horaire="nautilus ~/ecole/horaire &"
 alias file="nautilus . &"
@@ -155,7 +163,10 @@ alias math="cd /usr/local/MATLAB/R2017a/bin && ./matlab"
 alias electric="java -jar ~/ecole/inf1600/electric/electric.jar &"
 alias umlet="java -jar ~/umlet/umlet.jar &"
 alias untar="tar -zxvf"
+alias plantuml="java -jar ~/plantuml/plantuml.jar &"
 alias eclipse="/home/billy/eclipse/java-2018-092/eclipse/eclipse"
+alias postman='gnome-terminal -e "/home/billy/app/Postman/Postman"'
+alias socketiotester='gnome-terminal -e "/home/billy/app/socket-io-tester-linux-x64/socket-io-tester"'
 
 alias chrome="google-chrome"
 alias rubydoc="google-chrome ~/repositories/doc/rubyDoc/*.html"
@@ -164,3 +175,8 @@ alias gosudoc="google-chrome ~/repositories/doc/GosuDoc/*.html"
 alias dbload="rails db:drop &&rails db:schema:load &&rails db:seed"
 alias pass="~/passwordgen/passwordhasher"
 alias rubyc="~/repositories/rubyc/rubyc"
+alias pypip="python3.7 -m pip"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source /home/billy/.rvm/scripts/rvm
