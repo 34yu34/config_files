@@ -84,20 +84,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function note {
-  cd ~/ecole/$1/note
-}
-compdef _note note
-function _note {
-  _path_files -/ -W"/home/billy/ecole"
-}
 
 function ecole {
-  cd ~/ecole/$1
+  cd ~/ecole/session9/$1
 }
 compdef _ecole ecole
 function _ecole {
-  _path_files -/ -W"/home/billy/ecole"
+  _files -/ -W"/home/billy/ecole/session9"
 }
 
 function repo {
@@ -105,7 +98,7 @@ function repo {
 }
 compdef _repo repo
 function _repo {
-  _path_files -/ -W"/home/billy/repositories"
+  _files -/ -W"/home/billy/repositories"
 }
 
 function playground {
@@ -113,7 +106,7 @@ function playground {
 }
 compdef _playground playground
 function _repo {
-  _path_files -/ -W"/home/billy/playground"
+  _files -/ -W"/home/billy/playground"
 }
 
 function py {
@@ -147,8 +140,8 @@ alias gap="git add -N . && git add -p"
 alias gk="gitk --all"
 alias gc="git commit -m"
 
-alias zshconfig="atom ~/.zshrc"
-alias pathconfig="atom ~/.profile"
+alias zshconfig="code ~/.zshrc"
+alias pathconfig="code ~/.profile"
 alias mil="cd ~/Documents/militaire"
 #alias repo="cd ~/repositories"
 alias atompack="cd ~/.atom/packages"
@@ -176,7 +169,11 @@ alias dbload="rails db:drop &&rails db:schema:load &&rails db:seed"
 alias pass="~/passwordgen/passwordhasher"
 alias rubyc="~/repositories/rubyc/rubyc"
 alias pypip="python3.7 -m pip"
+alias jupyter-notebook="~/.local/bin/jupyter-notebook --no-browser"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source /home/billy/.rvm/scripts/rvm
+# For special purpose of WSL
+export DISPLAY=:0
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
